@@ -1,0 +1,71 @@
+[
+  {
+    "label": "wrench",
+    "center_px": [
+      165,
+      214
+    ],
+    "angle_deg": 67.78692626953125,
+    "area_px": 6114.0,
+    "template_distance": 0.2374392220421394,
+    "solidity": 0.6147812971342383,
+    "aspect_ratio": 1.7264150943396226,
+    "grasp_px": [
+      164,
+      219
+    ],
+    "bbox_xywh": [
+      111,
+      128,
+      106,
+      183
+    ],
+    "image": "demo_01_separated_tools.png"
+  },
+  {
+    "label": "caliper",
+    "center_px": [
+      420,
+      218
+    ],
+    "angle_deg": 16.426681518554688,
+    "area_px": 4488.0,
+    "template_distance": 0.5580013976240391,
+    "solidity": 0.44481887110362256,
+    "aspect_ratio": 1.683673469387755,
+    "grasp_px": [
+      425,
+      205
+    ],
+    "bbox_xywh": [
+      343,
+      156,
+      165,
+      98
+    ],
+    "image": "demo_01_separated_tools.png"
+  },
+  {
+    "label": "cable",
+    "center_px": [
+      610,
+      352
+    ],
+    "angle_deg": 127.92969512939453,
+    "area_px": 4312.0,
+    "template_distance": 0.06963645673323093,
+    "solidity": 0.519705917801615,
+    "aspect_ratio": 1.0434782608695652,
+    "grasp_px": [
+      610,
+      352
+    ],
+    "bbox_xywh": [
+      553,
+      293,
+      115,
+      120
+    ],
+    "image": "demo_01_separated_tools.png"
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "label": "wrench",
+    "center_px": [
+      364,
+      250
+    ],
+    "angle_deg": 115.81329345703125,
+    "area_px": 6043.0,
+    "template_distance": 0.5526747620610437,
+    "solidity": 0.6063920525814058,
+    "aspect_ratio": 1.592920353982301,
+    "grasp_px": [
+      367,
+      254
+    ],
+    "bbox_xywh": [
+      311,
+      164,
+      113,
+      180
+    ],
+    "image": "demo_02_overlapping_tools.png"
+  },
+  {
+    "label": "wrench",
+    "center_px": [
+      313,
+      236
+    ],
+    "angle_deg": -0.9537272453308105,
+    "area_px": 2299.5,
+    "template_distance": 0.4919073310060298,
+    "solidity": 0.5419514494461466,
+    "aspect_ratio": 1.8727272727272728,
+    "grasp_px": [
+      311,
+      238
+    ],
+    "bbox_xywh": [
+      260,
+      211,
+      103,
+      55
+    ],
+    "image": "demo_02_overlapping_tools.png"
+  },
+  {
+    "label": "caliper",
+    "center_px": [
+      399,
+      183
+    ],
+    "angle_deg": 116.33995819091797,
+    "area_px": 559.5,
+    "template_distance": 0.560126582278481,
+    "solidity": 0.6213214880621877,
+    "aspect_ratio": 1.3714285714285714,
+    "grasp_px": [
+      397,
+      183
+    ],
+    "bbox_xywh": [
+      380,
+      159,
+      35,
+      48
+    ],
+    "image": "demo_02_overlapping_tools.png"
+  },
+  {
+    "label": "cable",
+    "center_px": [
+      222,
+      347
+    ],
+    "angle_deg": 38.82960510253906,
+    "area_px": 3914.5,
+    "template_distance": 0.4549890217126128,
+    "solidity": 0.4052696966559685,
+    "aspect_ratio": 1.12,
+    "grasp_px": [
+      222,
+      347
+    ],
+    "bbox_xywh": [
+      143,
+      293,
+      140,
+      125
+    ],
+    "image": "demo_02_overlapping_tools.png"
+  }
+]
