@@ -17,8 +17,8 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parent
 RESEARCH = ROOT / "research.md"
 OUTPUT = ROOT / "PS2_tool_sorting_report.pdf"
-INK = colors.HexColor("#202020")
-MUTED = colors.HexColor("#555555")
+INK = colors.HexColor("#252525")
+MUTED = colors.HexColor("#66615B")
 
 
 def clean_markup(text: str) -> str:
@@ -57,14 +57,14 @@ def page_chrome(canvas, doc):
     width, height = A4
     canvas.setStrokeColor(colors.HexColor("#B8B8B8"))
     if doc.page > 1:
-        canvas.setFont("Helvetica", 8)
+        canvas.setFont("Times-Roman", 9)
         canvas.setFillColor(MUTED)
-        canvas.drawString(18 * mm, height - 11 * mm, "IVDC AUTONOMY 2026  |  PROBLEM STATEMENT 2")
+        canvas.drawString(18 * mm, height - 11 * mm, "Problem Statement 2  |  Computer Vision")
         canvas.line(18 * mm, height - 13 * mm, width - 18 * mm, height - 13 * mm)
     canvas.line(18 * mm, 15 * mm, width - 18 * mm, 15 * mm)
-    canvas.setFont("Helvetica", 8)
+    canvas.setFont("Times-Roman", 9)
     canvas.setFillColor(MUTED)
-    canvas.drawString(18 * mm, 10 * mm, "IVDC AUTONOMY 2026  /  PS2 COMPUTER VISION")
+    canvas.drawString(18 * mm, 10 * mm, "IVDC Autonomy 2026")
     canvas.drawRightString(width - 18 * mm, 10 * mm, f"{doc.page:02d}")
     canvas.restoreState()
 
@@ -98,12 +98,12 @@ def main():
     flow = output_dir / "workflow.png"
     workflow_figure(flow)
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name="CoverTitlePS2", fontName="Helvetica-Bold", fontSize=22, leading=27, textColor=INK, alignment=TA_LEFT))
-    styles.add(ParagraphStyle(name="CoverSubtitlePS2", fontName="Helvetica", fontSize=10, leading=14, textColor=MUTED))
-    styles.add(ParagraphStyle(name="SectionPS2", fontName="Helvetica-Bold", fontSize=14, leading=18, textColor=INK, spaceBefore=4 * mm, spaceAfter=2.2 * mm, keepWithNext=True))
-    styles.add(ParagraphStyle(name="SubsectionPS2", fontName="Helvetica-Bold", fontSize=10.5, leading=14, textColor=INK, spaceBefore=2.5 * mm, spaceAfter=1 * mm, keepWithNext=True))
-    styles.add(ParagraphStyle(name="BodyPS2", fontName="Helvetica", fontSize=9.1, leading=12.8, textColor=INK, spaceAfter=1.2 * mm, alignment=TA_LEFT))
-    styles.add(ParagraphStyle(name="CaptionPS2", fontName="Helvetica-Oblique", fontSize=8, leading=10, textColor=MUTED, alignment=TA_CENTER, spaceAfter=2 * mm))
+    styles.add(ParagraphStyle(name="CoverTitlePS2", fontName="Times-Bold", fontSize=24, leading=29, textColor=INK, alignment=TA_LEFT))
+    styles.add(ParagraphStyle(name="CoverSubtitlePS2", fontName="Times-Roman", fontSize=11, leading=15, textColor=MUTED))
+    styles.add(ParagraphStyle(name="SectionPS2", fontName="Times-Bold", fontSize=15, leading=19, textColor=INK, spaceBefore=4 * mm, spaceAfter=2.2 * mm, keepWithNext=True))
+    styles.add(ParagraphStyle(name="SubsectionPS2", fontName="Times-Bold", fontSize=11, leading=14, textColor=INK, spaceBefore=2.5 * mm, spaceAfter=1 * mm, keepWithNext=True))
+    styles.add(ParagraphStyle(name="BodyPS2", fontName="Times-Roman", fontSize=9.5, leading=12.8, textColor=INK, spaceAfter=1.1 * mm, alignment=TA_LEFT))
+    styles.add(ParagraphStyle(name="CaptionPS2", fontName="Times-Italic", fontSize=9, leading=11, textColor=MUTED, alignment=TA_CENTER, spaceAfter=2 * mm))
     doc = BaseDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm,
                           topMargin=16 * mm, bottomMargin=21 * mm,
                           title="PS2 - Computer Vision for Robotic Object Sorting",
@@ -113,12 +113,12 @@ def main():
 
     story = []
     story.extend([Spacer(1, 14 * mm),
-                  Paragraph("IVDC AUTONOMY 2026  |  PROBLEM STATEMENT 2", styles["CoverSubtitlePS2"]),
+                  Paragraph("IVDC Autonomy 2026  /  Problem Statement 2", styles["CoverSubtitlePS2"]),
                   Spacer(1, 3 * mm), Paragraph("Computer Vision for<br/>Robotic Object Sorting", styles["CoverTitlePS2"]),
-                  Spacer(1, 3 * mm), Paragraph("Research, implementation and evaluation", styles["CoverSubtitlePS2"]),
+                  Spacer(1, 3 * mm), Paragraph("Project report", styles["CoverSubtitlePS2"]),
                   Spacer(1, 5 * mm)])
     rule = Table([[""]], colWidths=[doc.width], rowHeights=[.5 * mm])
-    rule.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#777777"))]))
+    rule.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#9A958F"))]))
     story.extend([rule, Spacer(1, 5 * mm)])
     story.append(Paragraph("Project overview", styles["SectionPS2"]))
     story.append(Paragraph(

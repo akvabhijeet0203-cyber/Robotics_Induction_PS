@@ -279,14 +279,15 @@ def detect_tools(image: np.ndarray, min_area: float = 140.0, segmentation: str =
 
 def visualize(image: np.ndarray, detections: Iterable[Detection], masks: dict[str, np.ndarray], output_path: Path) -> None:
     detections = list(detections)
-    colors = {"wrench": (30, 55, 220), "caliper": (210, 100, 20), "cable": (20, 160, 35), "unknown": (80, 80, 80)}
+    # Use restrained neutral annotation so labels do not compete with the source image.
+    colors = {"wrench": (65, 65, 65), "caliper": (65, 65, 65), "cable": (65, 65, 65), "unknown": (65, 65, 65)}
     overlay = image.copy()
     for item in detections:
         x, y, w, h = item.bbox_xywh
         color = colors[item.label]
         cv2.rectangle(overlay, (x, y), (x + w, y + h), color, 2)
         cv2.circle(overlay, item.center_px, 5, (0, 0, 0), -1)
-        cv2.drawMarker(overlay, item.grasp_px, (255, 0, 255), cv2.MARKER_CROSS, 18, 2)
+        cv2.drawMarker(overlay, item.grasp_px, (35, 35, 35), cv2.MARKER_CROSS, 18, 2)
         text = f"{item.label} ({item.center_px[0]}, {item.center_px[1]})"
         cv2.putText(overlay, text, (x, max(18, y - 8)), cv2.FONT_HERSHEY_SIMPLEX, 0.52, color, 2, cv2.LINE_AA)
 
